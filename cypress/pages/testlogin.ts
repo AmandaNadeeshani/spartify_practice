@@ -3,11 +3,11 @@ export class Swaglogin {
     private t_username = 'input[data-test="username"]';
     private t_password = 'input[data-test="password"]';
     private lgn_btn = '#login-button';
-private urltxt ='/inventory.html';
-private dashbordlogo ='.app_logo';
-private bodytxt='Sauce Labs Backpack'
- 
-    
+    private urltxt = '/inventory.html';
+    private dashbordlogo = '.app_logo';
+    private body_txt = 'Sauce Labs Backpack'
+
+
 
     public visitURL() {
         cy.visit('https://www.saucedemo.com/v1/');
@@ -32,12 +32,12 @@ private bodytxt='Sauce Labs Backpack'
     }
 
 
-// Assert successful login by checking URL or an element on the dashboard
-public stepAssertLogin(){
-    cy.url().should('include', this.urltxt); 
-    cy.get(this.dashbordlogo).should('be.visible');
-    cy.contains(this.bodytxt).should('be.visible');
-}
+    // Assert successful login by checking URL or an element on the dashboard
+    public stepAssertLogin() {
+        cy.url().should('include', this.urltxt);
+        cy.get(this.dashbordlogo).should('be.visible');
+        cy.contains(this.body_txt).should('be.visible');
+    }
 
 
 }
